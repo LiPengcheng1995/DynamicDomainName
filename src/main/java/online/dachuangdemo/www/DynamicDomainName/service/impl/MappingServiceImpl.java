@@ -51,7 +51,9 @@ public class MappingServiceImpl implements MappingService {
                 return responseWrapper;
             }
             HostFileOperation.writeToFile(mappingVO);
-            mappingDao.activeMapping(id);
+            if (mappingDao.activeMapping(id) == 1) {
+                //数据库更新失败
+            }
         } catch (IOException e) {
             e.printStackTrace();
             responseWrapper.setData(true);

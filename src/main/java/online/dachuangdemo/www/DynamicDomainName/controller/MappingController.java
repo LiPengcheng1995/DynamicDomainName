@@ -38,7 +38,7 @@ public class MappingController {
 
     @RequestMapping(value = "/activation/{mappingId}", method = RequestMethod.POST)
     public ResponseWrapper<Boolean> activeMapping(@PathVariable Integer mappingId) {
-        return new ResponseWrapper();
+        return mappingService.activeMapping(mappingId);
     }
 
     @RequestMapping(value = "/inactivation/{mappingId}", method = RequestMethod.POST)

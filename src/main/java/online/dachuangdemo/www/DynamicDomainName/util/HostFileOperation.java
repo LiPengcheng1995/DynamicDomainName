@@ -15,6 +15,23 @@ public class HostFileOperation {
         File file = new File(HOST_PATH);
         FileWriter writer=new FileWriter(file,true);
         writer.write(mappingVO.toString());
+        writer.flush();
+        writer.close();
         return true;
+    }
+    public static Boolean writeToFile1(String mappingVO) throws IOException {
+        File file = new File(HOST_PATH);
+        FileWriter writer=new FileWriter(file,true);
+        writer.write(mappingVO);
+        writer.flush();
+        writer.close();
+        return true;
+    }
+    public static void main(String args[]){
+        try {
+            HostFileOperation.writeToFile1("heheh");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

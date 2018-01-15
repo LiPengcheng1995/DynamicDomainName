@@ -84,6 +84,6 @@ public class MappingVO {
         result += ip + "\t";
         result += domainName + "\r\n";
 
-        return super.toString();
+        return result;
     }
 }
