@@ -59,6 +59,4 @@ public class Mybatis  {
         mapperScannerConfigurer.setBasePackage("online.dachuangdemo.www.DynamicDomainName.dao");
         return mapperScannerConfigurer;
     }
-
-
 }

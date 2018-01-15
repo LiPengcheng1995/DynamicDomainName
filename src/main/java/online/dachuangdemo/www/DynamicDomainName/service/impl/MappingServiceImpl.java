@@ -25,11 +25,14 @@ public class MappingServiceImpl implements MappingService {
     @Override
     public ResponseWrapper<List<MappingVO>> getAllMappings() {
         ResponseWrapper<List<MappingVO>> responseWrapper = new ResponseWrapper<>();
-        String hehe = mappingDao.test();
-        System.out.println(hehe);
-//        responseWrapper.setData(mappingDao.getAllMappings());
-//        responseWrapper.setCode(ResponseIteam.SUCCESS.getCode());
+        responseWrapper.setData(mappingDao.getAllMappings());
+        responseWrapper.setCode(ResponseIteam.SUCCESS.getCode());
         responseWrapper.setMessage(ResponseIteam.SUCCESS.getMessage());
         return responseWrapper;
+    }
+
+    @Override
+    public ResponseWrapper<Boolean> activeMapping() {
+        return null;
     }
 }

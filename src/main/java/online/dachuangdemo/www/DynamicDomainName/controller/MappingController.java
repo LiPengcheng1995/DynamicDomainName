@@ -28,7 +28,6 @@ public class MappingController {
 
     @RequestMapping(value = "/getAll", method = RequestMethod.GET)
     public ResponseWrapper<List<MappingVO>> getAllMappings() {
-        System.out.println("点了一下");
         return mappingService.getAllMappings();
     }
 

@@ -15,7 +15,6 @@ import java.util.List;
  **/
 @Repository
 public interface MappingDao {
-//    List<MappingVO> getAllMappings();
-    String test();
+    List<MappingVO> getAllMappings();
 
 }
