@@ -14,6 +14,8 @@ import java.util.List;
  **/
 public interface MappingService {
     ResponseWrapper<List<MappingVO>> getAllMappings();
-    ResponseWrapper<Boolean> activeMapping();
+    ResponseWrapper<Boolean> activeMapping(Integer id);
+    ResponseWrapper<MappingVO> getMapping(Integer id);
+
 
 }

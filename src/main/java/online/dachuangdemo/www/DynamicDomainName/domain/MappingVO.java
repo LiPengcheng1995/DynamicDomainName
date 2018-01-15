@@ -75,4 +75,15 @@ public class MappingVO {
         this.description = description;
         this.ifActive = ifActive;
     }
+
+    @Override
+    public String toString() {
+        String result = new String();
+        result += "\r\n#  id="+id;
+        result += "\r\n#  "+description+"\r\n";
+        result += ip + "\t";
+        result += domainName + "\r\n";
+
+        return super.toString();
+    }
 }

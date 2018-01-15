@@ -9,6 +9,8 @@ package online.dachuangdemo.www.DynamicDomainName.enumeration;
  **/
 public enum ResponseIteam {
     SUCCESS(200,"Success"),
+    MAPPING_NOT_EXIST(201,"MAPPING_NOT_EXIST"),
+    WRIT_TO_HOST_OR_SQLITE_ERROR(202,"WRIT_TO_HOST_OR_SQLITE_ERROR"),
     FAIL(204,"Error");
 
     int code;

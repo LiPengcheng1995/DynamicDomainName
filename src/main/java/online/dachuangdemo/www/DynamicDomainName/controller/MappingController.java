@@ -31,6 +31,11 @@ public class MappingController {
         return mappingService.getAllMappings();
     }
 
+    @RequestMapping(value = "/getMapping", method = RequestMethod.GET)
+    public ResponseWrapper<MappingVO> getMapping(int id) {
+        return mappingService.getMapping(id);
+    }
+
     @RequestMapping(value = "/activation/{mappingId}", method = RequestMethod.POST)
     public ResponseWrapper<Boolean> activeMapping(@PathVariable Integer mappingId) {
         return new ResponseWrapper();

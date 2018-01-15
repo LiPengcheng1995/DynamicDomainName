@@ -16,5 +16,7 @@ import java.util.List;
 @Repository
 public interface MappingDao {
     List<MappingVO> getAllMappings();
+    Integer activeMapping(Integer id);
+    MappingVO getMapping(Integer id);
 
 }

@@ -16,5 +16,15 @@
     </select>
 
 
+    <update id="activeMapping">
+        update mapping set ifActive = 'true' where id = #{id}
+    </update>
+
+    <select id="getMapping" resultMap="MappingVO">
+        select * from mapping where id = #{id}
+    </select>
+
+
+
 
 </mapper>
