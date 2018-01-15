@@ -31,8 +31,8 @@ public class MappingController {
         return mappingService.getAllMappings();
     }
 
-    @RequestMapping(value = "/getMapping", method = RequestMethod.GET)
-    public ResponseWrapper<MappingVO> getMapping(int id) {
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    public ResponseWrapper<MappingVO> getMapping(@PathVariable Integer id) {
         return mappingService.getMapping(id);
     }
 
