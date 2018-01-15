@@ -17,7 +17,7 @@
 
 
     <update id="activeMapping">
-        update mapping set ifActive = 'true' where id = #{id}
+        update mapping set `ifActive` = 'true' where id = #{id}
     </update>
 
     <select id="getMapping" resultMap="MappingVO">
