@@ -28,17 +28,17 @@ public class MappingController {
     @Resource
     private MappingService mappingService;
 
-    @ApiOperation("激活此应用")
-    @RequestMapping(value = "/start", method = RequestMethod.POST)
-    public ResponseWrapper<Boolean> start() {
-        return new ResponseWrapper<>();
-    }
-
-    @ApiOperation("关闭此应用")
-    @RequestMapping(value = "/stop", method = RequestMethod.POST)
-    public ResponseWrapper<Boolean> stop() {
-        return new ResponseWrapper<>();
-    }
+//    @ApiOperation("激活此应用")
+//    @RequestMapping(value = "/start", method = RequestMethod.POST)
+//    public ResponseWrapper<Boolean> start() {
+//        return new ResponseWrapper<>();
+//    }
+//
+//    @ApiOperation("关闭此应用")
+//    @RequestMapping(value = "/stop", method = RequestMethod.POST)
+//    public ResponseWrapper<Boolean> stop() {
+//        return new ResponseWrapper<>();
+//    }
 
     @ApiOperation("获得所有可用映射的列表")
     @RequestMapping(value = "/getAll", method = RequestMethod.GET)

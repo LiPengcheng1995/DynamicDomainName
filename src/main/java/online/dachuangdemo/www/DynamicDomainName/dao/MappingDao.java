@@ -16,8 +16,10 @@ import java.util.List;
 @Repository
 public interface MappingDao {
     List<MappingVO> getAllMappings();
+    List<MappingVO> getAllActiveMappings();
     Integer activeMapping(Integer id);
     MappingVO getMapping(Integer id);
     Integer inactiveMapping(Integer id);
+
 
 }
