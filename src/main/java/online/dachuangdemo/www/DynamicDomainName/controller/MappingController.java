@@ -20,7 +20,7 @@ import java.util.List;
  * description:
  **/
 @Controller
-@Api(value = "/api/mapping", description = "本地映射管理", tags = "Local Mapping")
+@Api(value = "/api/Local/mapping", description = "本地映射管理", tags = "Local Mapping")
 @RequestMapping("/api/Local/mapping")
 @ResponseBody
 public class MappingController {

@@ -32,23 +32,27 @@ public class Swagger2 {
     @Value("${swagger2.description.version}")
     private String version;
 
+    @Value("${swagger2.pathRegex}")
+    private String swaggerPathRegex;
+
     @Bean
-    public Docket createRestApi() {
-        return new Docket(DocumentationType.SWAGGER_2)
-                .apiInfo(apiInfo())
+    public Docket api() {
+        return (new Docket(DocumentationType.SWAGGER_2))
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("online.dachuangdemo.www.DynamicDomainName.controller"))
-                .paths(PathSelectors.any())
-                .build();
+                .apis(RequestHandlerSelectors.any())
+                .paths(PathSelectors.regex(this.swaggerPathRegex))
+                .build()
+                .apiInfo(this.apiInfo());
     }
 
     private ApiInfo apiInfo() {
-        return new ApiInfoBuilder()
-                .title(title)
-                .description(description)
-                .termsOfServiceUrl(serviceUrl)
-                .contact(contact)
-                .version(version)
+        return (new ApiInfoBuilder())
+                .title(this.title)
+                .description(this.description)
+                .version(this.version)
+                .termsOfServiceUrl(String.format("http://%s", this.serviceUrl))
+                .license("LICENSE")
+                .licenseUrl(this.serviceUrl)
                 .build();
     }
 
