@@ -8,9 +8,10 @@ package online.dachuangdemo.www.DynamicDomainName.enumeration;
  * description:
  **/
 public enum ResponseIteam {
-    SUCCESS(200,"Success"),
-    MAPPING_NOT_EXIST(201,"MAPPING_NOT_EXIST"),
-    WRIT_TO_HOST_OR_SQLITE_ERROR(202,"WRIT_TO_HOST_OR_SQLITE_ERROR"),
+    SUCCESS(200,"成功"),
+    MAPPING_NOT_EXIST(201,"此映射不存在"),
+    WRIT_TO_HOST_OR_SQLITE_ERROR(202,"本地文件写入错误"),
+    MAPPING_ALREADY_ON(203,"此映射已经处于激活状态"),
     FAIL(204,"Error");
 
     int code;

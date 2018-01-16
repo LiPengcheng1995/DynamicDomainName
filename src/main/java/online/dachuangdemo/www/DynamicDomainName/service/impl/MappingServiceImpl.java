@@ -50,14 +50,17 @@ public class MappingServiceImpl implements MappingService {
                 responseWrapper.setMessage(ResponseIteam.MAPPING_NOT_EXIST.getMessage());
                 return responseWrapper;
             }
+            if (mappingVO.getIfActive() == true){
+                responseWrapper.setData(false);
+                responseWrapper.setCode(ResponseIteam.MAPPING_ALREADY_ON.getCode());
+                responseWrapper.setMessage(ResponseIteam.MAPPING_ALREADY_ON.getMessage());
+                return responseWrapper;
+            }
             HostFileOperation.writeToFile(mappingVO);
             Integer updateNumber = mappingDao.activeMapping(id);
             if (updateNumber != 1){
                 throw new IOException();
             }
-//            if (mappingDao.activeMapping(id) == 1) {
-//                //数据库更新失败
-//            }
         } catch (IOException e) {
             e.printStackTrace();
             responseWrapper.setData(true);
