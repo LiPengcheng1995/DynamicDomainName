@@ -6,6 +6,9 @@ import online.dachuangdemo.www.DynamicDomainName.configuration.ResponseWrapper;
 import online.dachuangdemo.www.DynamicDomainName.domain.MappingVO;
 import online.dachuangdemo.www.DynamicDomainName.domain.submit.MappingSubmit;
 import online.dachuangdemo.www.DynamicDomainName.service.MappingService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.SpringApplication;
+import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -27,18 +30,6 @@ public class MappingController {
 
     @Resource
     private MappingService mappingService;
-
-//    @ApiOperation("激活此应用")
-//    @RequestMapping(value = "/start", method = RequestMethod.POST)
-//    public ResponseWrapper<Boolean> start() {
-//        return new ResponseWrapper<>();
-//    }
-//
-//    @ApiOperation("关闭此应用")
-//    @RequestMapping(value = "/stop", method = RequestMethod.POST)
-//    public ResponseWrapper<Boolean> stop() {
-//        return new ResponseWrapper<>();
-//    }
 
     @ApiOperation("获得所有可用映射的列表")
     @RequestMapping(value = "/getAll", method = RequestMethod.GET)

@@ -31,5 +31,9 @@
         update mapping set `ifActive` = '0' where id = #{id}
     </update>
 
+    <update id="inactiveAllMappings">
+        update mapping set `ifActive` = '0'
+    </update>
+
 
 </mapper>

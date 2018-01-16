@@ -51,5 +51,11 @@ public class HostFileOperation {
         return writeToFile();
     }
 
+    public static Boolean clearHostFile() throws IOException {
+        mappingVOs.clear();
+        writeToFile();
+        return false;
+    }
+
 
 }

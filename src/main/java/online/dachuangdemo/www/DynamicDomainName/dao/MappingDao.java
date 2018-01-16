@@ -20,6 +20,7 @@ public interface MappingDao {
     Integer activeMapping(Integer id);
     MappingVO getMapping(Integer id);
     Integer inactiveMapping(Integer id);
+    void inactiveAllMappings();
 
 
 }
