@@ -8,6 +8,7 @@ swagger2:
       serviceUrl: http://dachuangdemo.online/
       contact: "鹏程"
       version: "1.0"
+   pathRegex: /api/.*
 
 
 

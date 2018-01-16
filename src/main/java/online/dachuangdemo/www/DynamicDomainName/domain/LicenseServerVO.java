@@ -10,6 +10,7 @@ import io.swagger.annotations.ApiModelProperty;
  * description:
  **/
 public class LicenseServerVO {
+
     @ApiModelProperty("证书服务器id")
     private Integer id;
 

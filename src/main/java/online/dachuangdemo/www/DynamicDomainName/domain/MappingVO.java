@@ -75,4 +75,26 @@ public class MappingVO {
         this.description = description;
         this.ifActive = ifActive;
     }
+
+    @Override
+    public String toString() {
+        String result = new String();
+        result += "\r\n#  id="+id;
+        result += "\r\n#  "+description+"\r\n";
+        result += ip + "\t";
+        result += domainName + "\r\n";
+
+        return result;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof MappingVO){
+            MappingVO temp = (MappingVO)obj;
+            if (this.id == temp.id){
+                return true;
+            }
+        }
+        return false;
+    }
 }

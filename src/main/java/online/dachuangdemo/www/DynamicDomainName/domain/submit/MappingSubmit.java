@@ -1,5 +1,7 @@
 package online.dachuangdemo.www.DynamicDomainName.domain.submit;
 
+import io.swagger.annotations.ApiModelProperty;
+
 /**
  * 代码描述 :
  *
@@ -8,8 +10,14 @@ package online.dachuangdemo.www.DynamicDomainName.domain.submit;
  * description:
  **/
 public class MappingSubmit {
+
+    @ApiModelProperty("注释")
     private String description;
+
+    @ApiModelProperty("ip")
     private String ipAddress;
+    
+    @ApiModelProperty("域名")
     private String demainName;
 
     public String getDescription() {
