@@ -49,7 +49,7 @@ public class MappingController {
     @ApiOperation("关闭对应映射")
     @RequestMapping(value = "/inactivation/{mappingId}", method = RequestMethod.POST)
     public ResponseWrapper<Boolean> inactiveMapping(@PathVariable Integer mappingId) {
-        return new ResponseWrapper();
+        return mappingService.inactiveMapping(mappingId);
     }
 
     @ApiOperation("添加新映射")

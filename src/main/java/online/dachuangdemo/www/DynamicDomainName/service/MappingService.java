@@ -16,6 +16,7 @@ public interface MappingService {
     ResponseWrapper<List<MappingVO>> getAllMappings();
     ResponseWrapper<Boolean> activeMapping(Integer id);
     ResponseWrapper<MappingVO> getMapping(Integer id);
+    ResponseWrapper<Boolean>  inactiveMapping(Integer id);
 
 
 }

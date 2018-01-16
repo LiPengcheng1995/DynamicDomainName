@@ -86,4 +86,15 @@ public class MappingVO {
 
         return result;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof MappingVO){
+            MappingVO temp = (MappingVO)obj;
+            if (this.id == temp.id){
+                return true;
+            }
+        }
+        return false;
+    }
 }
