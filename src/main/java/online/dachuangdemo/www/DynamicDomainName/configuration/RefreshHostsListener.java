@@ -28,7 +28,7 @@ public class RefreshHostsListener implements ApplicationListener<ContextRefreshe
         {
             //需要执行的逻辑代码，当spring容器初始化完成后就会执行该方法。
             System.out.println("\n\n\n\n\n______________\n\n\n从数据库加载激活的映射\n\n_________\n\n");
-            List<MappingVO> mappingVOS = mappingDao.getAllMappings();
+            List<MappingVO> mappingVOS = mappingDao.getAllActiveMappings();
             for (int i=0;i < mappingVOS.size();i++){
                 System.out.println(mappingVOS.get(i).toString());
             }

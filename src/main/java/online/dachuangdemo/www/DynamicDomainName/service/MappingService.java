@@ -20,6 +20,6 @@ public interface MappingService {
     ResponseWrapper<Boolean>  inactiveMapping(Integer id);
     ResponseWrapper<MappingVO>  addMapping(MappingSubmit mappingSubmit);
     ResponseWrapper<Boolean> removeMapping(Integer id);
-
+    ResponseWrapper<Boolean>  modifyMapping(Integer id,MappingSubmit mappingSubmit);
 
 }

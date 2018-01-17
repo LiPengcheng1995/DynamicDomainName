@@ -38,9 +38,9 @@ public class MappingController {
     }
 
     @ApiOperation("获得指定映射的信息")
-    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public ResponseWrapper<MappingVO> getMapping(@PathVariable Integer id) {
-        return mappingService.getMapping(id);
+    @RequestMapping(value = "/{mappingId}", method = RequestMethod.GET)
+    public ResponseWrapper<MappingVO> getMapping(@PathVariable Integer mappingId) {
+        return mappingService.getMapping(mappingId);
     }
 
     @ApiOperation("激活对应映射")
@@ -58,13 +58,19 @@ public class MappingController {
     @ApiOperation("添加新映射")
     @RequestMapping(value = "/add", method = RequestMethod.POST)
     public ResponseWrapper<MappingVO> addNewMapping(@RequestBody MappingSubmit mappingSubmit) {
-        return new ResponseWrapper();
+        return mappingService.addMapping(mappingSubmit);
     }
 
     @ApiOperation("删除对应映射")
     @RequestMapping(value = "/delete/{mappingId}", method = RequestMethod.DELETE)
     public ResponseWrapper<Boolean> removeMapping(@PathVariable Integer mappingId) {
-        return new ResponseWrapper();
+        return mappingService.removeMapping(mappingId);
+    }
+
+    @ApiOperation("修改映射")
+    @RequestMapping(value = "/{mappingId}", method = RequestMethod.PUT)
+    public ResponseWrapper<Boolean> modifyMapping(@PathVariable Integer mappingId,@RequestBody MappingSubmit mappingSubmit) {
+        return mappingService.modifyMapping(mappingId,mappingSubmit);
     }
 
 

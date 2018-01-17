@@ -3,37 +3,50 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="online.dachuangdemo.www.DynamicDomainName.dao.MappingDao">
-    <resultMap type="online.dachuangdemo.www.DynamicDomainName.domain.MappingVO" id="MappingVO">
-        <id column="id" property="id"/>
-        <result column="ip" property="ip" javaType="String"/>
-        <result column="domainName" property="domainName"  javaType="String"/>
-        <result column="description" property="description"  javaType="String"/>
-        <result column="ifActive" property="ifActive" javaType="Boolean"/>
-    </resultMap>
 
-    <select id="getAllMappings" resultMap="MappingVO">
-        select * from mapping
+    <select id="getAllMappings" resultType="online.dachuangdemo.www.DynamicDomainName.domain.MappingVO">
+        select id,ip,domainName,description,ifActive from mapping where ifDelete='0'
     </select>
 
-    <select id="getAllActiveMappings" resultMap="MappingVO">
-        select * from mapping where ifActive='1'
+    <select id="getAllActiveMappings" resultType="online.dachuangdemo.www.DynamicDomainName.domain.MappingVO">
+        select id,ip,domainName,description,ifActive from mapping where ifActive='1' and ifDelete='0'
     </select>
 
     <update id="activeMapping">
-        update mapping set `ifActive` = '1' where id = #{id}
+        update mapping set `ifActive` = '1' where id = #{id} and ifDelete='0'
     </update>
 
-    <select id="getMapping" resultMap="MappingVO">
-        select * from mapping where id = #{id}
+    <select id="getMapping" resultType="online.dachuangdemo.www.DynamicDomainName.domain.MappingVO">
+        select id,ip,domainName,description,ifActive from mapping where id = #{id} and ifDelete='0'
     </select>
 
     <update id="inactiveMapping">
-        update mapping set `ifActive` = '0' where id = #{id}
+        update mapping set `ifActive` = '0' where id = #{id} and ifDelete='0'
     </update>
 
     <update id="inactiveAllMappings">
-        update mapping set `ifActive` = '0'
+        update mapping set `ifActive` = '0' and ifDelete='0'
     </update>
+
+    <insert id="addMapping" parameterType="online.dachuangdemo.www.DynamicDomainName.domain.MappingVO">
+        insert into mapping(ip,domainName,description,ifActive,ifDelete)
+        values(#{ip},#{domainName},#{description},#{ifActive},0)
+    </insert>
+
+    <select id="getLargestId" resultType="Integer">
+        select max(id) from mapping where ifDelete='0'
+    </select>
+
+
+    <update id="removeMapping">
+        update mapping set ifDelete='1' where id = #{id}
+    </update>
+
+    <update id="modifyMapping" parameterType="online.dachuangdemo.www.DynamicDomainName.domain.MappingVO">
+        update mapping set ip = #{ip},domainName=#{domainName},description=#{description} where id=#{id}
+    </update>
+
+
 
 
 </mapper>

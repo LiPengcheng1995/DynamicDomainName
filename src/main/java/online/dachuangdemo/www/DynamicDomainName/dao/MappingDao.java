@@ -21,6 +21,10 @@ public interface MappingDao {
     MappingVO getMapping(Integer id);
     Integer inactiveMapping(Integer id);
     void inactiveAllMappings();
+    Integer addMapping(MappingVO mappingVO);
+    Integer getLargestId();
+    Integer removeMapping(Integer id);
+    Integer modifyMapping(MappingVO mappingVO);
 
 
 }
