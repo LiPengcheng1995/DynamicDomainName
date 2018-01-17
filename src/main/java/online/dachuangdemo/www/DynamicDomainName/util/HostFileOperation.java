@@ -37,12 +37,24 @@ public class HostFileOperation {
         return false;
     }
 
+    public static Boolean iniHostFile(List<MappingVO> tempMappingVOs) throws IOException {
+        mappingVOs.addAll(tempMappingVOs);
+        writeToFile();
+        return false;
+    }
+
     public static Boolean removeFromFile(MappingVO mappingVO) throws IOException {
         if (mappingVOs.indexOf(mappingVO) == -1) {
             return false;
         }
         mappingVOs.remove(mappingVO);
         return writeToFile();
+    }
+
+    public static Boolean clearHostFile() throws IOException {
+        mappingVOs.clear();
+        writeToFile();
+        return false;
     }
 
 

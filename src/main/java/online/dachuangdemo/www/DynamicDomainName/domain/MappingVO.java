@@ -25,7 +25,7 @@ public class MappingVO {
     @ApiModelProperty("是否处在激活状态")
     private Boolean ifActive;
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
