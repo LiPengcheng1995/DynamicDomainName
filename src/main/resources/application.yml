@@ -2,7 +2,7 @@ swagger2:
    description:
       title: 动态域名设置 Api
       description: |
-           只是临时写的demo.会有很多不足之处，更多相关文章请关注：http://dachuangdemo.online/
+           只是临时写的demo.会有很多不足之处，更多相关文章请关注：http://lipengcheng.men/
            本程序仅作学习使用，不得用于其他用途
 
       serviceUrl: http://dachuangdemo.online/
